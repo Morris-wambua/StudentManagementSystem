@@ -24,13 +24,13 @@ public class StudentManagementSystemApplication implements CommandLineRunner{
 		
 //		Student student1=new Student("Mark", "Sarchi","Mark@gmail.com");
 //		studentRepository.save(student1);
-//		
+//
 //		Student student2=new Student("Dunkan", "DeLight", "delight@gmail.com");
 //		studentRepository.save(student2);
-//		
+//
 //		Student student3=new Student("Natalie", "Githinji","Natalie@gmail.com");
 //		studentRepository.save(student3);
-//				 
+
 	}
 
 }

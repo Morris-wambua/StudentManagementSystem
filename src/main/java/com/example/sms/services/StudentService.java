@@ -4,6 +4,8 @@ import java.util.List;
 
 import com.example.sms.entity.Student;
 
+import javax.persistence.StoredProcedureQuery;
+
 public interface StudentService {
 	
 	List<Student> getAllStudents();
@@ -16,4 +18,6 @@ public interface StudentService {
 	Student updateStudent(Student student);
 	
 	void deleteStudentById(Long id);
+
+	public boolean getFourStudents();
 }

@@ -2,11 +2,16 @@ package com.example.sms.services.impl;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.sms.entity.Student;
 import com.example.sms.repositories.StudentRepository;
 import com.example.sms.services.StudentService;
+
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.persistence.StoredProcedureQuery;
 
 @Service
 public class StudentServiceImpl implements StudentService{
@@ -19,6 +24,10 @@ public class StudentServiceImpl implements StudentService{
 		super();
 		this.studentRepository = studentRepository;
 	}
+
+	@Autowired
+	@PersistenceContext
+	private EntityManager entityManager;
 
 	@Override
 	public List<Student> getAllStudents() {
@@ -45,5 +54,10 @@ public class StudentServiceImpl implements StudentService{
 	public void deleteStudentById(Long id) {
 		studentRepository.deleteById(id);
 	}
+
+    @Override
+    public boolean getFourStudents() {
+ 		return entityManager.createNamedStoredProcedureQuery("display_four_students").execute();
+    }
 
 }
