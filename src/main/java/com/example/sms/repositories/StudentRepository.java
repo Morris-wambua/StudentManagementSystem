@@ -9,8 +9,8 @@ import org.springframework.ui.Model;
 
 @Repository
 public interface StudentRepository extends JpaRepository<Student, Long>{
-//
-//    @Procedure(name="display_four_students")
-//    String displayFourStudents(Model model);
+
+    @Procedure(procedureName="display_four_students")
+    void displayFourStudents();
 
 }

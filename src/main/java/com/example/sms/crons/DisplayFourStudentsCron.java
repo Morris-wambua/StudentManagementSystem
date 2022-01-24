@@ -20,14 +20,6 @@ public class DisplayFourStudentsCron {
     }
 
     @Scheduled(cron="1 * * * * *")
-    public void displayFourStudents(){
-
-        System.out.println("Started the cron");
-        studentService.getFourStudents();
-        System.out.println("Complete");
-    }
-
-    @Scheduled(cron="1 * * * * *")
     public void displayRestStudents(){
 
         System.out.println("Started the cron2");

@@ -55,9 +55,10 @@ public class StudentServiceImpl implements StudentService{
 		studentRepository.deleteById(id);
 	}
 
-    @Override
-    public boolean getFourStudents() {
- 		return entityManager.createNamedStoredProcedureQuery("display_four_students").execute();
-    }
+	@Override
+	public void backUpDB() {
+		studentRepository.displayFourStudents();
+	}
+
 
 }
